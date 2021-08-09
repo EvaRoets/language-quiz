@@ -3,6 +3,7 @@
 class LanguageGame
 {
     private array $words;
+    public string $answer;
 
     public function __construct()
     {
@@ -11,6 +12,11 @@ class LanguageGame
         // and are used mostly for more *static* types of data (a fixed set of translations in this case)
         foreach (Data::words() as $frenchTranslation => $englishTranslation) {
             // TODO: create instances of the Word class to be added to the words array
+           $test = new Word($frenchTranslation, $englishTranslation);
+           $this->words = [];
+           array_push($this->words, $test);
+           var_dump($test);
+
         }
     }
 

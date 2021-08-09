@@ -17,7 +17,7 @@
                 <div class="form-group col-md-6">
                     <!-- TODO display french word-->
                     <label for="translation">Translate: </label>
-                    <input type="text" id="frenchword" name="frenchword" value="<?= ""; ?>"><br>
+                    <input type="text" id="frenchWord" name="frenchWord" value="<?= ""; ?>"><br>
 
                 </div>
             </div>
