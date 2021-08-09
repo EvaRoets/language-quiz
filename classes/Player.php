@@ -11,8 +11,8 @@ class Player
         // TODO: add 👤 automatically to their name
         $this->name = "👤" . $name;
         $this->score = $score;
-        echo $name
     }
-}
 
+}
+$score = "";
 $player = new Player($name, $score);

@@ -13,11 +13,18 @@
 
         <!-- TODO: add a form for the user to play the game -->
         <form action="" method="post" id="quiz" name="quiz">
+<!--            <div class="form-row">-->
+<!--                <div class="form-group col-md-6">-->
+<!--                    <label for="player">Player Name: </label>-->
+<!--                    <input type="text" id="player" name="player" value="--><?//= $player->name; ?><!--"><br>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="form-row">
                 <div class="form-group col-md-6">
+
                     <!-- TODO display french word-->
                     <label for="translation">Translate: </label>
-                    <input type="text" id="frenchWord" name="frenchWord" value="<?= ""; ?>"><br>
+                    <input type="text" id="randomWord" name="randomWord" value="<?= $game->randomWord->frenchWord; ?>" readonly><br>
 
                 </div>
             </div>
