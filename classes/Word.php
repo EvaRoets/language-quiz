@@ -23,11 +23,12 @@ class Word
 
         if (strtolower($this->playerTranslation) == $this->englishWord) {
             $totalScore++;
-            echo "<div id='results'>Tres bien! You're score is" . $totalCorrect"</div>";
+            echo "<div id='results'>Tres bien! You're score is" . $totalScore . "</div>";
         } else {
             $totalScore--;
-            echo "<div id='results'>!Dommage, your answer is wrong. You're score is" . $totalCorrect"</div>";
+            echo "<div id='results'>!Dommage, your answer is wrong. You're score is" . $totalScore . "</div>";
         }
+
         // Bonus (hard): can you allow answers with small typo's (max one character different)?
     }
 }
