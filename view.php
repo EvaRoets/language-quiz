@@ -33,10 +33,13 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <!-- TODO check result button-->
-                    <input type="submit" value="Check my translation" />
+                    <div class="buttonfield">
+                        <!-- check result button-->
+                        <input type="submit" value="Check my translation" class="btn"/>
 
-                    <!-- TODO reset button-->
+                        <!-- reset button-->
+                        <input type="reset" value="Reset my score" class="btn"/>
+                    </div>
                 </div>
              </div>
 
