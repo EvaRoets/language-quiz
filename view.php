@@ -42,7 +42,7 @@
                 <div class="form-group col-md-6">
                     <div class="buttonfield">
                         <!-- check result button-->
-                        <input type="submit" value="Check my translation" class="btn"/>
+                        <input type="submit" name="translation" value="Check my translation" class="btn"/>
 
                         <!-- reset button-->
                         <input type="reset" value="Reset my score" class="btn"/>
