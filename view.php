@@ -9,5 +9,19 @@
 </head>
 <body>
 	<!-- TODO: add a form for the user to play the game -->
+    <form action="" method="post" id="quiz">
+        //TODO display french word
+
+        //TODO player input field
+        <label for="translation">Your translation: </label>
+        <input type="text" id="translation" name="translation"><br>
+
+        //TODO check result button
+        <input type="submit" value="Submit answer" />
+
+        //TODO display result right/wrong
+    </form>
+
+
 </body>
 </html>
