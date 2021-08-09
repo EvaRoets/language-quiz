@@ -8,20 +8,47 @@
 	<title>Game</title>
 </head>
 <body>
-	<!-- TODO: add a form for the user to play the game -->
-    <form action="" method="post" id="quiz">
-        //TODO display french word
+    <h1>Language Quiz</h1>
+    <div class="gamefield">
 
-        //TODO player input field
-        <label for="translation">Your translation: </label>
-        <input type="text" id="translation" name="translation"><br>
+        <!-- TODO: add a form for the user to play the game -->
+        <form action="" method="post" id="quiz" name="quiz">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <!-- TODO display french word-->
+                    <label for="translation">Translate: </label>
+                    <input type="text" id="frenchword" name="frenchword" value="<?= ""; ?>"><br>
 
-        //TODO check result button
-        <input type="submit" value="Submit answer" />
+                </div>
+            </div>
 
-        //TODO display result right/wrong
-    </form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <!-- TODO player input field-->
+                    <label for="translation">Your answer: </label>
+                    <input type="text" id="translation" name="translation" value="<?= ""; ?>"><br>
 
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <!-- TODO check result button-->
+                    <input type="submit" value="Check my translation" />
+
+                    <!-- TODO reset button-->
+                </div>
+             </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <!--TODO display result right/wrong-->
+
+                </div>
+            </div>
+
+        </form>
+    </div>
 
 </body>
 </html>
