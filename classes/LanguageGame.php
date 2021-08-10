@@ -20,12 +20,12 @@ class LanguageGame
     public function run()
     {
         //check for option A and B
-        if (isset($_POST["submit"]) && !empty($_POST["translation"])){
-            $this->processTranslation();
-        } else {
+        $submittedTranslation = isset($_POST["submit"]) && !empty($_POST["translation"]);
+        if (!$submittedTranslation) {
             $this->generateWord();
+        } else {
+            $this->processTranslation();
         }
-
     }
 
     //option A: select a random word for the user to translate
