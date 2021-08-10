@@ -5,7 +5,7 @@ class LanguageGame
     private array $words = [];
     public string $message = "";
     public Word $randomWord;
-    public int $totalScore = 0;
+//    public int $totalScore = 0;
 
     public function __construct()
     {
@@ -13,18 +13,17 @@ class LanguageGame
             // create instances of the Word class to be added to the words array
             $word = new Word($frenchTranslation, $englishTranslation);
             array_push($this->words, $word);
-            //var_dump($word);
         }
     }
 
     public function run()
     {
         //check for option A and B
-        $submittedTranslation = isset($_POST["submit"]) && !empty($_POST["translation"]);
+        $submittedTranslation = isset($_POST["submit"]) && !empty($_POST["playerTranslation"]);
         if (!$submittedTranslation) {
             $this->generateWord();
         } else {
-            $this->processTranslation();
+            $this->checkTranslation();
         }
     }
 
@@ -34,25 +33,25 @@ class LanguageGame
         $this->randomWord = $this->words[array_rand($this->words, 1)];
         // var_dump($this->words);
         // store randomWord in session
-        $_SESSION["randomWord"] = $this->randomWord;
+        $_SESSION["playerTranslation"] = serialize($this->randomWord);
     }
 
     //option B: user has just submitted an answer
-    public function processTranslation()
+    public function checkTranslation()
     {
         //call randomWord from session
-        $this->randomWord = $_SESSION["randomWord"];
+        $this->randomWord = unserialize($_SESSION["playerTranslation"]);
 
         // verify the answer
-        $playerTranslation = $_POST("translation");
+        $playerTranslation = $_POST("playerTranslation");
 
         // generate a message for the user that can be shown
         //if verify() is true
         if ($this->randomWord->verify($playerTranslation) === true) {
-            $this->message = "<div>Tres bien, your answer <b>{$playerTranslation}</b> is correct. </b></b>Your score is" . $totalScore . "</div>";
+            $this->message = "<div>Tres bien, your answer <b>" . $playerTranslation . "</b> is correct. </b></b>Your score is" . $totalScore . "</div>";
             //TODO add score
         } else {
-            $this->message = "<div>!Dommage, your answer <b>{$playerTranslation}</b> is wrong. </b></b>Your score is" . $totalScore . "</div>";
+            $this->message = "<div>!Dommage, your answer <b>" . $playerTranslation . "</b> is wrong. </b></b>Your score is" . $totalScore . "</div>";
             //TODO add score
         }
     }
