@@ -5,9 +5,7 @@ class LanguageGame
     private array $words = [];
     public string $message = "";
     public Word $randomWord;
-    public string $playerTranslation;
     public int $totalScore = 0;
-
 
     public function __construct()
     {
@@ -27,9 +25,10 @@ class LanguageGame
         $_SESSION["randomWord"] = $this->randomWord;
 
         // Option B: user has just submitted an answer
-        // TODO: verify the answer (use the verify function in the word class) - you'll need to get the used word from the array first
+        // verify the answer
+        // generate a message for the user that can be shown
 
-        $this->playerTranslation = $_POST("translation");
+        $playerTranslation = $_POST("translation");
 
         //if verify() is true
         if ($this->randomWord->verify($playerTranslation) === true) {
@@ -39,9 +38,6 @@ class LanguageGame
             $this->message = "<div>!Dommage, your answer <b>{$playerTranslation}</b> is wrong. </b></b>Your score is" . $totalScore . "</div>";
             //TODO add score
         }
-
-
-        // TODO: generate a message for the user that can be shown
 
     }
 }
