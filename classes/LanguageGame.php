@@ -34,6 +34,7 @@ class LanguageGame
         // var_dump($this->words);
         // store randomWord in session
         $_SESSION["playerTranslation"] = serialize($this->randomWord);
+        var_dump($_SESSION["playerTranslation"]);
     }
 
     //option B: user has just submitted an answer

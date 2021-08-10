@@ -16,7 +16,7 @@ class Word
     {
         // verify if the provided answer by the user matches the correct one
         // allow answers with different casing
-        if (strtolower($this->playerTranslation) == $this->englishWord) {
+        if (strtolower($playerTranslation) == $this->englishWord) {
             return true;
         } else {
             return false;
