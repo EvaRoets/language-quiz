@@ -1,7 +1,6 @@
 # Language quiz ❔
 
-Watch the result of this project >>[here]()
-
+~Watch the result of this project >> [here]()~
 *add project picture*
 
 ## 🎯 Objectives
