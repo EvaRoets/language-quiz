@@ -12,7 +12,7 @@ class Word
 
     }
 
-    public function verify(string $playerTranslation) :bool
+    public function verify(string $playerTranslation): bool
     {
         // verify if the provided answer by the user matches the correct one
         // allow answers with different casing
@@ -21,6 +21,8 @@ class Word
         } else {
             return false;
         }
+
+        // return (strtolower($playerTranslation) == $this->englishWord);
         // Bonus (hard): can you allow answers with small typo's (max one character different)?
     }
 }

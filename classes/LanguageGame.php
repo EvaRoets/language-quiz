@@ -5,6 +5,7 @@ class LanguageGame
     private array $words = [];
     public string $message = "";
     public Word $randomWord;
+
 //    public int $totalScore = 0;
 
     public function __construct()
@@ -16,19 +17,19 @@ class LanguageGame
         }
     }
 
-    public function run()
-    {
-        //check for option A and B
-        $submittedTranslation = isset($_POST["submit"]) && !empty($_POST["playerTranslation"]);
-        if (!$submittedTranslation) {
-            $this->generateWord();
-        } else {
-            $this->checkTranslation();
-        }
-    }
+//    public function run()
+//    {
+//        //check for option A and B
+//        $submittedTranslation = isset($_POST["submit"]) && !empty($_POST["playerTranslation"]);
+//        if (!$submittedTranslation) {
+//            $this->randomWord = $this->generateRandomWord();
+//        } else {
+//            $this->checkTranslation();
+//        }
+//    }
 
     //option A: select a random word for the user to translate
-    private function generateWord()
+    private function generateRandomWord()
     {
         $this->randomWord = $this->words[array_rand($this->words, 1)];
         $_SESSION["playerTranslation"] = serialize($this->randomWord);
@@ -41,7 +42,7 @@ class LanguageGame
         $this->randomWord = unserialize($_SESSION["playerTranslation"]);
 
         // verify the answer
-        $playerTranslation = $_POST("playerTranslation");
+        $playerTranslation = $_POST('playerTranslation');
 
         // generate a message for the user that can be shown
         //if verify() is true
